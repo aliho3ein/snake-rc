@@ -38,10 +38,12 @@ body {
 #gameCanvas {
   border: 3px solid #000;
   margin-top: 50px;
-  background-color: antiquewhite;
+  background-color: rgb(220, 234, 219);
   display: block;
   box-shadow: 0 0 15px #000;
   cursor: pointer;
+  /* url("https://spng.pngfind.com/pngs/s/464-4640398_rotating-arrow-symbol-comments-rotating-arrow-png-transparent.png"),
+    auto; */
 }
 a {
   text-decoration: none;

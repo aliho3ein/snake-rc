@@ -5,7 +5,13 @@ const ctx = game.getContext("2d");
 
 game.addEventListener("click", start);
 
+ctx.font = "40px sans-serif";
+ctx.strokeStyle = "green";
+ctx.strokeText("Click To Play", 125, 250);
+
 function start() {
+  game.style.cursor = "none";
+  game.removeEventListener("click", start);
   score.textContent = "00";
   let wid = game.width;
   let hei = game.height;
@@ -57,7 +63,7 @@ function start() {
 
   /*------------------------ Base Place  ------------------------*/
   let ClearCanvas = () => {
-    ctx.fillStyle = "#dff9fb";
+    ctx.fillStyle = " rgb(220, 234, 219)";
     ctx.fillRect(0, 0, wid, hei);
   };
 
@@ -96,8 +102,13 @@ function start() {
         main();
       }, 100);
     else {
-      score.textContent = "Game Over";
-      console.warn("GameOver");
+      console.warn("GameOver - Score : " + score.textContent);
+      ClearCanvas();
+      game.addEventListener("click", start);
+      game.style.cursor = "pointer";
+      ctx.font = "40px sans-serif";
+      ctx.strokeStyle = "green";
+      ctx.strokeText("Game Over", 135, 250);
       return;
     }
   }
